@@ -37,18 +37,16 @@ function _renderStepContent(step) {
             return <Address formField={formField} />;
         case 3:
             return <Password formField={formField} />;
-        case 4:
-            return <Completed />;
         default:
-            return <div>Not Found</div>;
+            return <Completed />;
     }
 }
 
 export default function RegForm() {
     const classes = useStyles();
-    const [activeStep, setActiveStep] = useState(0);
+    const [activeStep, setActiveStep] = useState(3);
     const currentValidationSchema = validationSchema[activeStep]
-    const isLastStep = activeStep === steps.length - 1;
+    const isLastStep = activeStep === steps.length - 2;
 
     function _header(activeStep) {
       switch (activeStep){
@@ -203,9 +201,9 @@ export default function RegForm() {
                                   type="submit"
                                   variant="contained"
                                   color="primary"
-                                  className={classes.button}
+                                  className={classes.button} 
                                 >
-                                  {isLastStep ? 'Register' : 'Next'}
+                                  {isLastStep  ? 'Register' : 'Next'}
                                 </Button>
                                 {isSubmitting && (
                                   <CircularProgress
