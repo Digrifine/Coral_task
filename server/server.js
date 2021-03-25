@@ -16,10 +16,6 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-	res.send('go to /persons to see persons');
-});
-
 app.post('/users/add', (req, res) => {
 	const salutation = req.body.salutation;
 	const firstName = req.body.firstName;
