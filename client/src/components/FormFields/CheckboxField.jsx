@@ -12,10 +12,11 @@ export default function CheckboxField(props) {
   const { label, ...rest } = props;
   const [field, meta, helper] = useField(props);
   const { setValue } = helper;
+  const [touched, error] = at(meta, 'touched', 'error');
+  const isError = touched && error && true; 
 
   function _renderHelperText() {
-    const [touched, error] = at(meta, 'touched', 'error');
-    if (touched && error) {
+    if (isError) {
       return <FormHelperText>{error}</FormHelperText>;
     }
   }
@@ -25,7 +26,7 @@ export default function CheckboxField(props) {
   }
 
   return (
-    <FormControl {...rest}>
+    <FormControl {...rest} error={isError}>
       <FormControlLabel
         value={field.checked}
         checked={field.checked}

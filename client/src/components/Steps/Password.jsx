@@ -1,6 +1,6 @@
 import { Grid, Card ,CardContent , Typography,List, ListItem} from '@material-ui/core'
 import React from 'react'
-import {InputField} from '../FormFields'
+import {CheckboxField, InputField} from '../FormFields'
 import captch from './firstCaptch.gif'
 
 
@@ -11,7 +11,8 @@ export default function Password(props) {
         formField: {
             password,
             confirmPassword,
-            captcha
+            captcha,
+            termsOFUse
         }
       } = props;
 
@@ -31,6 +32,9 @@ export default function Password(props) {
                     </Grid>
                     <Grid item xs={9}>
                         <InputField name={captcha.name} label={captcha.label} fullWidth/>
+                    </Grid>
+                    <Grid item xs={9}>
+                        <CheckboxField name={termsOFUse.name} label={termsOFUse.label} fullWidth/>
                     </Grid>
                 </Grid>
                 <Grid item xs={3}>

@@ -21,6 +21,7 @@ const {
 		password,
 		confirmPassword,
 		captcha,
+		termsOFUse,
 	},
 } = checkoutFormModel;
 
@@ -71,5 +72,9 @@ export default [
 		[captcha.name]: Yup.string()
 			.required(`${captcha.requiredErrorMsg}`)
 			.matches(captchaRegEx, captcha.invalidErrorMsg),
+		[termsOFUse.name]: Yup.boolean().oneOf(
+			[true],
+			`${termsOFUse.requiredErrorMsg}`,
+		),
 	}),
 ];

@@ -29,6 +29,7 @@ const {
 		password,
 		confirmPassword,
 		captcha,
+		termsOFUse,
 	},
 } = checkoutFormModel;
 
@@ -61,4 +62,5 @@ export default {
 	[password.name]: '',
 	[confirmPassword.name]: '',
 	[captcha.name]: '',
+	[termsOFUse.name]: false,
 };

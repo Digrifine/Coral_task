@@ -143,5 +143,10 @@ export default {
 			requiredErrorMsg: 'Captcha is required',
 			invalidErrorMsg: 'Captcha is not match',
 		},
+		termsOFUse: {
+			name: 'termsOfUse',
+			label: 'I have read and accept the terms of use',
+			requiredErrorMsg: 'Accepting is required',
+		},
 	},
 };
